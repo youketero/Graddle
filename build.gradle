@@ -1,0 +1,51 @@
+import java.security.InvalidParameterException
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'scala'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    TRANSITIVE_PROPERTIES = properties.keySet()
+    SCALA_VERSION = "2.12.10"
+    GATLING_VERSION = "3.4.1"
+    DEFAULT_SCALA_EXT = ".scala"
+    BASE_URL = "service.ggmock.url.base"
+}
+
+dependencies {
+    compile "org.scala-lang:scala-library:2.12.10"
+    testCompile "io.gatling:gatling-http:3.4.1"
+    testCompile "io.gatling:gatling-core:3.4.1"
+    testCompile "io.gatling.highcharts:gatling-charts-highcharts:3.4.1"
+    testCompile "io.gatling:gatling-app:3.4.1"
+    testCompile group: 'org.codehaus.janino', name: 'janino', version: '2.6.+'
+    testCompile 'org.apache.httpcomponents:httpclient:4.5.+'
+    testCompile 'org.apache.commons:commons-io:1.3.+'
+    testCompile 'org.apache.commons:commons-lang3:3.+'
+}
+
+def logbackGatlingConfig() {
+    return project.sourceSets.test.resources.find { it.name.contains('logback') }
+}
+
+task runGatlingSimulation(type: JavaExec) {
+
+    classpath = sourceSets.test.runtimeClasspath
+    jvmArgs = ["-Dlogback.configurationFile=${logbackGatlingConfig()}"]
+    main = "io.gatling.app.Gatling"
+    args = ["--simulation", "gatling.simulations." + project.properties.simulation]
+    doFirst {
+        TRANSITIVE_PROPERTIES.each { systemProperty it, project.property(it) }
+    }
+
+}
+
