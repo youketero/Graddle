@@ -1,0 +1,17 @@
+node("master"){
+    stage("initiate"){
+        echo "Prepare workspace"
+    }
+    stage("download repository"){
+        git credentialsId: 'c2d3d262-2621-404d-b168-7367f5c439bf', url: 'https://github.com/youketero/Graddle.git'
+    }
+	stage("Run gatling test"){
+		echo pwd()
+        sh 'ls'
+        sh 'bash ./gradlew "runGatlingSimulation"'
+        sh 'cd results \n ls'
+	}
+	stage("Clean workspace"){
+		deleteDir()
+	}
+}
