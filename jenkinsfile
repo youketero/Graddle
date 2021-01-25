@@ -13,6 +13,7 @@ node("master"){
 		echo testReportName
 	}
 	stage("Save report"){
-		
+		archiveArtifacts artifacts: 'results/**', excludes: null, fingerprint: true
+		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'results', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
 	}
 }
