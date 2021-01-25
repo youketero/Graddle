@@ -9,9 +9,10 @@ node("master"){
 		echo pwd()
         sh 'ls'
         sh 'bash ./gradlew "runGatlingSimulation"'
-        sh 'cd results \n ls'
+        def testReportName = sh 'cd results \n ls'
+		echo testReportName
 	}
-	stage("Clean workspace"){
-		deleteDir()
+	stage("Save report"){
+		
 	}
 }
