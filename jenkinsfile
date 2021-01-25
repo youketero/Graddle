@@ -13,7 +13,10 @@ node("master"){
 		echo testReportName
 	}
 	stage("Save report"){
-		archiveArtifacts artifacts: 'results/**', excludes: null, fingerprint: true
-		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'results', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+		archiveArtifacts artifacts: 'results/task*/**', excludes: null, fingerprint: true
+		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'results/task**/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+	}
+	stage("delete workspace"){
+		deleteDir()
 	}
 }
