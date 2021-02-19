@@ -42,7 +42,7 @@ task runGatlingSimulation(type: JavaExec) {
     classpath = sourceSets.test.runtimeClasspath
     jvmArgs = ["-Dlogback.configurationFile=${logbackGatlingConfig()}"]
     main = "io.gatling.app.Gatling"
-    args = ["--simulation", "gatling.simulations." + project.properties.simulation]
+    args = ["--simulation", "gatling.simulations.SimulationConstructor"]
     doFirst {
         TRANSITIVE_PROPERTIES.each { systemProperty it, project.property(it) }
     }
