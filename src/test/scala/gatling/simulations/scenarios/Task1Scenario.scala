@@ -1,7 +1,7 @@
 package gatling.simulations.scenarios
 
-import gatling.SimulationFacade
 import gatling.simulations.actions.basePage
+import gatling.simulations.common.SimulationFacade
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 

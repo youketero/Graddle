@@ -1,4 +1,4 @@
-package gatling
+package gatling.simulations.common
 
 import gatling.utils.PropertyNames._
 import io.gatling.core.Predef._
@@ -12,6 +12,6 @@ class SimulationFacade extends Simulation{
   protected val users:Int = Integer.parseInt(System.getProperty(USERS,"5"))
   protected val durationT:FiniteDuration = FiniteDuration.apply(durationTime, durationUnit)
   protected val scenarioName: String = System.getProperty(SCENARIO,"Task1")
-  protected val loadProfile:String = System.getProperty(LOAD_PROFILE,"Capacity test")
+  protected val loadProfile:String = System.getProperty(LOAD_PROFILE,"Load")
 
 }

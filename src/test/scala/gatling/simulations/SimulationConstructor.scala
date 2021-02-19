@@ -1,6 +1,6 @@
 package gatling.simulations
 
-import gatling.SimulationFacade
+import gatling.simulations.common.SimulationFacade
 import gatling.simulations.http.HttpConf.httpConf
 import gatling.simulations.loadProfiles.loadProfiles._
 import gatling.simulations.scenarios.Task1Scenario.scenarioTask1
@@ -12,7 +12,7 @@ import io.gatling.core.structure.ScenarioBuilder
 class SimulationConstructor extends SimulationFacade {
 
   val scenarioNames:Map[String,ScenarioBuilder] = Map("Task3" -> scenarioTask3, "Task1" -> scenarioTask1)
-  val loadProfiles:Map[String,ClosedInjectionStep] = Map("Load test" -> loadTest)
+  val loadProfiles:Map[String,ClosedInjectionStep] = Map("Load" -> loadTest)
 
   setUp(
     scenarioNames(scenarioName).inject(loadTest).protocols(httpConf)

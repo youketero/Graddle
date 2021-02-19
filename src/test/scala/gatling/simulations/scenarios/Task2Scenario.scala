@@ -2,7 +2,8 @@ package gatling.simulations.scenarios
 
 import gatling.simulations.actions
 import gatling.simulations.actions.basePage
-import gatling.{SimulationFacade, utils}
+import gatling.simulations.common.SimulationFacade
+import gatling.utils
 import gatling.utils.RandomDate.getRandomDate
 import gatling.utils.RandomTitle.getRandomTitle
 import gatling.utils.ReadTextFile.{getText, getTextPart}

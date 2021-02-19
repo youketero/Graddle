@@ -1,0 +1,19 @@
+target
+.gradle
+.project
+.settings
+.allure
+allure-results
+allure-report
+results
+build
+out/**
+!gradle/wrapper/gradle-wrapper.jar
+
+### IntelliJ IDEA ###
+!.idea/runConfigurations/
+*.iws
+.idea
+*.iml
+*.ipr
+/out/
