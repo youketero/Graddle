@@ -13,7 +13,7 @@ object basePage{
     exec(
       http("GET Contact Page")
         .get(contactUrl)
-        .check(status.is(200))
+        .check(status.is(300))
     ).pause("1000","3000", TimeUnit.MILLISECONDS)
   }
 
