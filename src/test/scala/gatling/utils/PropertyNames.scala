@@ -10,4 +10,5 @@ object PropertyNames {
   val REQUESTS: String = "requests"
   val SCENARIO: String = "scenarioName"
   val LOAD_PROFILE: String = "loadProfile"
+  val HTTPCONF: String = "configuration"
 }

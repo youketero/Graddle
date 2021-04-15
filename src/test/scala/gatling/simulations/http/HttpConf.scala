@@ -7,7 +7,7 @@ import io.gatling.http.protocol.HttpProtocolBuilder
 object HttpConf {
     val baseURL = "https://geology.knu.ua"
 
-    def httpConf: HttpProtocolBuilder = {
+    def httpConfGeology: HttpProtocolBuilder = {
       http.baseUrl(baseURL)
         .acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8") // 6
         .doNotTrackHeader("1")
