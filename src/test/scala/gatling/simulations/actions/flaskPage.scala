@@ -8,7 +8,7 @@ object flaskPage {
   val getHome:ChainBuilder = {
     exec(
       http("Get Home Page")
-        .get("/login?next=%2Findex")
+        .get("/")
         .check(status.is(200))
     )
   }
