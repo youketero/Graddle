@@ -7,6 +7,6 @@ import io.gatling.core.structure.ScenarioBuilder
 object flaskScenario {
 
   val flask: ScenarioBuilder = scenario("FlaskScenario")
-    .exec(flaskPage.getHome)
+    .exec(flaskPage.getHome).pause(5)
 
 }

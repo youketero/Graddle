@@ -11,7 +11,7 @@ class SimulationFacade extends Simulation{
   val requests:Int = Integer.parseInt(System.getProperty(REQUESTS,"10"))
   protected val users:Int = Integer.parseInt(System.getProperty(USERS,"5"))
   protected val durationT:FiniteDuration = FiniteDuration.apply(durationTime, durationUnit)
-  protected val scenarioName: String = System.getProperty(SCENARIO,"Task1")
+  protected val scenarioName: String = System.getProperty(SCENARIO,"Flask")
   protected val loadProfile:String = System.getProperty(LOAD_PROFILE,"Load")
   protected val http:String = System.getProperty(HTTPCONF,"Flask")
 
