@@ -5,7 +5,7 @@ import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
 object HttpConfFlask {
-  val baseURL = "host.docker.internal:5000"
+  val baseURL = "172.27.0.2:5000"
 
   def httpConfFlask: HttpProtocolBuilder = {
     http.baseUrl(baseURL)
