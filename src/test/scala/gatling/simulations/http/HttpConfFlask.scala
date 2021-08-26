@@ -5,7 +5,7 @@ import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
 object HttpConfFlask {
-  val baseURL = "http://192.168.88.221:5000"
+  val baseURL = "localhost:5000"
 
   def httpConfFlask: HttpProtocolBuilder = {
     http.baseUrl(baseURL)
