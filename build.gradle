@@ -7,7 +7,7 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'scala'
 
-sourceCompatibility = 11
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
