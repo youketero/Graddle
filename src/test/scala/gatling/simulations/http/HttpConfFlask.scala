@@ -1,11 +1,12 @@
 package gatling.simulations.http
 
+import gatling.utils.PropertyNames.BASEURL
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
 object HttpConfFlask {
-  val baseURL = "http://192.168.48.1:5000"
+  val baseURL = "http://" + System.getProperty(BASEURL,"localhost") + ":5000";
 
   def httpConfFlask: HttpProtocolBuilder = {
     http.baseUrl(baseURL)
